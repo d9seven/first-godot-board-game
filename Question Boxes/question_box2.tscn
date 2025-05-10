@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bt83ow17tfr2t"]
+
+[ext_resource type="PackedScene" uid="uid://cng3t0txj7n3m" path="res://Question Boxes/questionbox.tscn" id="1_a3y3c"]
+
+[node name="QuestionBox" instance=ExtResource("1_a3y3c")]
+button_one_is_right = false
+
+[node name="Label" parent="PanelContainer/MarginContainer/VBoxContainer" index="0"]
+text = "How many?"
+
+[node name="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" index="0"]
+text = "3"
+
+[node name="Button2" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" index="1"]
+text = "4"

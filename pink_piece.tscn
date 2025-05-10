@@ -1,46 +1,97 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1d3bbxici85a"]
+[gd_scene load_steps=8 format=3 uid="uid://c1d3bbxici85a"]
 
 [ext_resource type="Script" uid="uid://ehlo4y6duqt4" path="res://Main.gd" id="1_bxpt3"]
 [ext_resource type="Texture2D" uid="uid://b3x2ajyffbdpv" path="res://Art/pink piece.png" id="1_kcba3"]
-[ext_resource type="Texture2D" uid="uid://dtc0kcrlu16wr" path="res://Art/board.png" id="2_83al3"]
+[ext_resource type="Texture2D" uid="uid://xpncchppwdhi" path="res://Art/board with question marks.png" id="2_k8nbr"]
+[ext_resource type="PackedScene" uid="uid://cng3t0txj7n3m" path="res://Question Boxes/questionbox.tscn" id="2_n6gol"]
+[ext_resource type="PackedScene" uid="uid://bt83ow17tfr2t" path="res://Question Boxes/question_box2.tscn" id="3_58vuc"]
+[ext_resource type="PackedScene" uid="uid://jf07ufpxxe16" path="res://dice.tscn" id="4_a3yu8"]
+[ext_resource type="PackedScene" uid="uid://bc377ivtrynj1" path="res://spot.tscn" id="4_k8nbr"]
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("game_spaces")]
 script = ExtResource("1_bxpt3")
-game_spaces = [NodePath("Start"), NodePath("Spot1"), NodePath("Spot2"), NodePath("Spot3"), NodePath("Spot4"), NodePath("Spot5"), NodePath("Spot6")]
+game_spaces = [NodePath("Spots/Start"), NodePath("Spots/Start1"), NodePath("Spots/Start2"), NodePath("Spots/Start3"), NodePath("Spots/Start4"), NodePath("Spots/Start5"), NodePath("Spots/Start6"), NodePath("Spots/Start7"), NodePath("Spots/Start8"), NodePath("Spots/Start9"), NodePath("Spots/Start10"), NodePath("Spots/Start11"), NodePath("Spots/Start12"), NodePath("Spots/Start13"), NodePath("Spots/Start14"), NodePath("Spots/Start15"), NodePath("Spots/Start16"), NodePath("Spots/Start17"), NodePath("Spots/Start18")]
+question_boxs = Array[PackedScene]([ExtResource("2_n6gol"), ExtResource("3_58vuc")])
+metadata/_edit_vertical_guides_ = [-35.0]
 
 [node name="Board" type="Sprite2D" parent="."]
 position = Vector2(320, 180)
-texture = ExtResource("2_83al3")
+texture = ExtResource("2_k8nbr")
 
 [node name="PinkPiece" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(62, 164)
+position = Vector2(63, 162)
 texture = ExtResource("1_kcba3")
 
-[node name="Start" type="Marker2D" parent="."]
+[node name="Spots" type="Node" parent="."]
+
+[node name="Start" parent="Spots" instance_placeholder="res://spot.tscn"]
 position = Vector2(63, 162)
-gizmo_extents = 181.2
 
-[node name="Spot1" type="Marker2D" parent="."]
+[node name="Start1" parent="Spots" instance=ExtResource("4_k8nbr")]
 position = Vector2(129, 162)
-gizmo_extents = 181.2
 
-[node name="Spot2" type="Marker2D" parent="."]
-position = Vector2(194, 162)
-gizmo_extents = 181.2
+[node name="Start2" parent="Spots" instance=ExtResource("4_k8nbr")]
+position = Vector2(193, 162)
 
-[node name="Spot3" type="Marker2D" parent="."]
-position = Vector2(258, 162)
-gizmo_extents = 181.2
+[node name="Start3" parent="Spots" instance=ExtResource("4_k8nbr")]
+position = Vector2(257, 162)
 
-[node name="Spot4" type="Marker2D" parent="."]
-position = Vector2(322, 162)
-gizmo_extents = 181.2
+[node name="Start4" parent="Spots" instance=ExtResource("4_k8nbr")]
+position = Vector2(319, 162)
 
-[node name="Spot5" type="Marker2D" parent="."]
+[node name="Start5" parent="Spots" instance=ExtResource("4_k8nbr")]
 position = Vector2(386, 162)
-gizmo_extents = 181.2
+direction = 2
 
-[node name="Spot6" type="Marker2D" parent="."]
-position = Vector2(451, 162)
-gizmo_extents = 181.2
+[node name="Start6" parent="Spots" instance=ExtResource("4_k8nbr")]
+position = Vector2(449, 162)
+direction = 3
+
+[node name="Start7" parent="Spots" instance=ExtResource("4_k8nbr")]
+position = Vector2(513, 162)
+
+[node name="Start8" parent="Spots" instance=ExtResource("4_k8nbr")]
+position = Vector2(578, 162)
+
+[node name="Start9" parent="Spots" instance=ExtResource("4_k8nbr")]
+position = Vector2(578, 223)
+
+[node name="Start10" parent="Spots" instance=ExtResource("4_k8nbr")]
+position = Vector2(578, 291)
+
+[node name="Start11" parent="Spots" instance=ExtResource("4_k8nbr")]
+position = Vector2(513, 291)
+direction = 1
+
+[node name="Start12" parent="Spots" instance=ExtResource("4_k8nbr")]
+position = Vector2(449, 291)
+direction = 3
+
+[node name="Start13" parent="Spots" instance=ExtResource("4_k8nbr")]
+position = Vector2(386, 291)
+
+[node name="Start14" parent="Spots" instance=ExtResource("4_k8nbr")]
+position = Vector2(319, 291)
+
+[node name="Start15" parent="Spots" instance=ExtResource("4_k8nbr")]
+position = Vector2(257, 291)
+
+[node name="Start16" parent="Spots" instance=ExtResource("4_k8nbr")]
+position = Vector2(193, 291)
+
+[node name="Start17" parent="Spots" instance=ExtResource("4_k8nbr")]
+position = Vector2(129, 291)
+
+[node name="Start18" parent="Spots" instance=ExtResource("4_k8nbr")]
+position = Vector2(63, 291)
+
+[node name="Dice" parent="." instance=ExtResource("4_a3yu8")]
+position = Vector2(45, 93)
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[connection signal="dice_has_rolled" from="Dice" to="." method="_on_dice_dice_has_rolled"]

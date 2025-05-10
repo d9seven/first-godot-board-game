@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bc377ivtrynj1"]
+
+[ext_resource type="Script" uid="uid://bkco2ornqhdfa" path="res://spot.gd" id="1_82nir"]
+
+[node name="Start" type="Marker2D"]
+position = Vector2(67, 63)
+gizmo_extents = 181.2
+script = ExtResource("1_82nir")
